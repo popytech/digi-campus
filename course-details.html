@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formation Complète IA Génératives - Apprenez l'intelligence artificielle générative avec un cours complet et interactif.">
+  <title>Formation Complète IA Génératives</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Intégration d'une police moderne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variables */
+:root {
+  --primary-color: #f57224;
+  --primary-hover: #d85b1a;
+  --secondary-color: #333;
+  --light-bg: #f9f9f9;
+  --dark-bg: #222;
+  --text-color: #555;
+  --font-family: 'Roboto', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/* Global */
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--secondary-color);
+  background: #fff;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header et Menu Fixe */
+header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+.logo img {
+  height: 50px;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  transition: color var(--transition-speed);
+}
+.nav ul li a:hover,
+.nav ul li a:focus {
+  color: var(--primary-color);
+}
+/* Bouton hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--secondary-color);
+  transition: background var(--transition-speed);
+}
+
+/* Sections – Ajout d'une marge-top pour compenser le menu fixe */
+main {
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  background: var(--light-bg);
+}
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.hero-image img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+.hero-content {
+  flex: 1 1 300px;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.rating {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.price {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.current-price {
+  font-weight: bold;
+}
+.old-price {
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+  color: #888;
+}
+.coupon {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.course-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: background var(--transition-speed);
+}
+.course-actions button:hover,
+.course-actions button:focus {
+  background: var(--primary-hover);
+  outline: none;
+}
+
+/* Sections Générales */
+section {
+  padding: 3rem 0;
+}
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Ce que vous allez apprendre */
+.learn-list {
+  list-style: disc;
+  margin-left: 2rem;
+  color: var(--text-color);
+}
+
+/* Curriculum avec image à côté */
+.curriculum-module {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.module-image img {
+  width: 150px;
+  border-radius: 0.5rem;
+}
+.module-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.module-info ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Formateur */
+.instructor-profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.instructor-profile img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.instructor-info {
+  max-width: 600px;
+}
+.instructor-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.instructor-info p {
+  color: var(--text-color);
+}
+
+/* Avis */
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.review {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #fff;
+  transition: transform var(--transition-speed);
+}
+.review:hover,
+.review:focus {
+  transform: scale(1.02);
+  outline: none;
+}
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonial-text p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+.testimonial-text span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Animation flottante */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Autres Cours */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+  transition: transform var(--transition-speed);
+}
+.course-card a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  display: block;
+}
+.course-card img {
+  width: 100%;
+  display: block;
+  transition: transform var(--transition-speed);
+}
+.course-card h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.course-card:hover,
+.course-card:focus {
+  transform: scale(1.02);
+}
+.course-card:hover img,
+.course-card:focus img {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Responsive et Menu Mobile */
+@media (max-width: 768px) {
+  .hero-container, .instructor-profile, .curriculum-module {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .nav.active {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .reviews, .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Réduction des animations pour utilisateurs sensibles */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+</style>
+<body>
+  <!-- Menu fixe en haut -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#" aria-label="Accueil">
+          <img src="logo-placeholder.png" alt="Logo Académie" loading="lazy">
+        </a>
+      </div>
+      <nav id="main-nav" class="nav">
+        <ul>
+          <li><a href="#course-overview">Présentation</a></li>
+          <li><a href="#what-you-learn">Ce que vous allez apprendre</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#instructor">Formateur</a></li>
+          <li><a href="#reviews">Avis</a></li>
+          <li><a href="#other-courses">Autres Cours</a></li>
+        </ul>
+      </nav>
+      <!-- Bouton hamburger pour mobile -->
+      <button id="menu-toggle" aria-label="Menu" class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section Hero -->
+    <section id="course-overview" class="hero">
+      <div class="container hero-container">
+        <div class="hero-image">
+          <img src="https://via.placeholder.com/600x400" alt="Illustration du cours" loading="lazy">
+        </div>
+        <div class="hero-content">
+          <h1>Formation Complète IA Génératives</h1>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews-count">(1 234 avis)</span>
+          </div>
+          <p class="price">Prix : <span class="current-price">29,99€</span> <span class="old-price">59,99€</span></p>
+          <p class="coupon">Utilisez le coupon <strong>LETSLEARNNOW</strong> pour en bénéficier !</p>
+          <div class="course-actions">
+            <button id="buy-now">Acheter Maintenant</button>
+            <button id="add-to-cart">Ajouter au Panier</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Ce que vous allez apprendre -->
+    <section id="what-you-learn">
+      <div class="container">
+        <h2>Ce que vous allez apprendre</h2>
+        <ul class="learn-list">
+          <li>Comprendre les bases et concepts de l'IA générative</li>
+          <li>Maîtriser les algorithmes de deep learning spécifiques</li>
+          <li>Appliquer des techniques avancées pour créer du contenu génératif</li>
+          <li>Réaliser des projets pratiques et études de cas réels</li>
+        </ul>
+      </div>
+    </section>
+     <section id="what-you-learn">
+      <div class="container">
+        <h2>Ce que vous allez apprendre</h2>
+        <ul class="learn-list">
+          <li>Comprendre les bases et concepts de l'IA générative</li>
+          <li>Maîtriser les algorithmes de deep learning spécifiques</li>
+          <li>Appliquer des techniques avancées pour créer du contenu génératif</li>
+          <li>Réaliser des projets pratiques et études de cas réels</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section Description -->
+    <section id="description">
+      <div class="container">
+        <h2>Description du cours</h2>
+        <p>
+          Ce cours complet vous guide à travers toutes les étapes pour maîtriser l'intelligence artificielle générative. 
+          Que vous soyez débutant ou souhaitiez approfondir vos connaissances, notre formation offre une approche théorique et pratique pour réaliser vos projets IA.
+        </p>
+      </div>
+    </section>
+
+    
+    <!-- Section Curriculum avec images à côté -->
+    <section id="curriculum">
+      <div class="container">
+        <h2>Curriculum</h2>
+        <div class="curriculum-module">
+          <div class="module-image">
+            <img src="https://via.placeholder.com/150" alt="Module 1">
+          </div>
+          <div class="module-info">
+            <h3>Module 1 : Introduction à l'IA Générative</h3>
+            <ul>
+              <li>Qu'est-ce que l'IA générative ?</li>
+              <li>Historique et applications</li>
+              <li>Les outils et technologies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="curriculum-module">
+          <div class="module-image">
+            <img src="https://via.placeholder.com/150" alt="Module 2">
+          </div>
+          <div class="module-info">
+            <h3>Module 2 : Techniques de Deep Learning</h3>
+            <ul>
+              <li>Réseaux de neurones et architectures</li>
+              <li>Modèles de GAN et variational autoencoders</li>
+              <li>Optimisation et tuning</li>
+            </ul>
+          </div>
+        </div>
+        <div class="curriculum-module">
+          <div class="module-image">
+            <img src="https://via.placeholder.com/150" alt="Module 3">
+          </div>
+          <div class="module-info">
+            <h3>Module 3 : Projets Pratiques</h3>
+            <ul>
+              <li>Études de cas réels</li>
+              <li>Projets individuels et collaboratifs</li>
+              <li>Mise en production d'un modèle IA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Formateur -->
+    <section id="instructor">
+      <div class="container">
+        <h2>À propos du Formateur</h2>
+        <div class="instructor-profile">
+          <img src="https://via.placeholder.com/200" alt="Photo du formateur" loading="lazy">
+          <div class="instructor-info">
+            <h3>Jean Dupont</h3>
+            <p>
+              Expert en intelligence artificielle avec plus de 15 ans d'expérience, Jean partage sa passion et son expertise à travers ce cours complet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Avis -->
+    <section id="reviews">
+      <div class="container">
+        <h2>Avis des Étudiants</h2>
+        <div class="reviews">
+          <article class="review" tabindex="0">
+            <div class="testimonial-image">
+              <img src="https://via.placeholder.com/80" alt="Photo Étudiant 1" loading="lazy">
+            </div>
+            <div class="testimonial-text">
+              <p>"Un cours complet et très bien structuré !"</p>
+              <span>- Marie L.</span>
+            </div>
+          </article>
+          <article class="review" tabindex="0">
+            <div class="testimonial-image">
+              <img src="https://via.placeholder.com/80" alt="Photo Étudiant 2" loading="lazy">
+            </div>
+            <div class="testimonial-text">
+              <p>"Les exemples pratiques m'ont permis de progresser rapidement."</p>
+              <span>- Karim S.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Autres Cours Disponibles -->
+    <section id="other-courses">
+      <div class="container">
+        <h2>Autres Cours Disponibles</h2>
+        <div class="courses-grid">
+          <article class="course-card">
+            <a href="course-details.html" aria-label="Détails Formation Web Design">
+              <img src="https://via.placeholder.com/300x200" alt="Formation Web Design" loading="lazy">
+              <h3>Formation Web Design</h3>
+            </a>
+          </article>
+          <article class="course-card">
+            <a href="https://example.com/course2" aria-label="Détails Formation Marketing Digital">
+              <img src="https://via.placeholder.com/300x200" alt="Formation Marketing Digital" loading="lazy">
+              <h3>Marketing Digital</h3>
+            </a>
+          </article>
+          <article class="course-card">
+            <a href="https://example.com/course3" aria-label="Détails Formation UX/UI">
+              <img src="https://via.placeholder.com/300x200" alt="Formation UX/UI" loading="lazy">
+              <h3>Formation UX/UI</h3>
+            </a>
+          </article>
+          <article class="course-card">
+            <a href="https://example.com/course4" aria-label="Détails Formation Data Science">
+              <img src="https://via.placeholder.com/300x200" alt="Formation Data Science" loading="lazy">
+              <h3>Formation Data Science</h3>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Formation Complète IA Génératives. Tous droits réservés.</p>
+    </div>
+  </footer>
+  <script>
+    // Utilisation de JavaScript moderne pour gérer le menu mobile et le clic sur "Acheter Maintenant"
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Gestion du bouton "Acheter Maintenant"
+  const buyButton = document.getElementById('buy-now');
+  if (buyButton) {
+    buyButton.addEventListener('click', () => {
+      // Redirection vers la page de paiement
+      window.location.href = "https://votrepage.com/paiement";
+    });
+  }
+
+  // Gestion du menu mobile avec bouton hamburger
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // Optionnel : Fermeture du menu lors d'un clic sur un lien (mobile)
+  const navLinks = nav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('active')) {
+        nav.classList.remove('active');
+      }
+    });
+  });
+});
+
+  </script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
